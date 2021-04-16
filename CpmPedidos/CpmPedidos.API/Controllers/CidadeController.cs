@@ -43,5 +43,12 @@ namespace CpmPedidos.API.Controllers
 
             return GetService<ICidadeRepository>().Excluir(id);
         }
+
+        [HttpGet]
+        [Route("search/{text}/{pagina?}")]
+        public dynamic GetSearch(string text, int pagina = 1, [FromQuery] string ordem = "")
+        {
+            return GetService<ICidadeRepository>().Search(text, pagina, ordem);
+        }
     }
 }

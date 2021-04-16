@@ -7,6 +7,18 @@ namespace CpmPedidos.Repository
 {
     public class CidadeRepository : BaseRepository, ICidadeRepository
     {
+        private void OrdenarPorNome(IQueryable<Cidade> query, string ordem)
+        {
+            if (string.IsNullOrEmpty(ordem) || ordem.ToUpper() == "ASC")
+            {
+                query = query.OrderBy(x => x.Nome);
+            }
+            else
+            {
+                query = query.OrderByDescending(x => x.Nome);
+            }
+        }
+
         // 5 Repository
         public CidadeRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
@@ -125,6 +137,38 @@ namespace CpmPedidos.Repository
             }
 
             return false;
+        }
+
+        public dynamic Search(string text, int pagina, string ordem)
+        {
+            var queryCidade = DbContext.Cidades
+                .Where(x => x.Ativo && (x.Nome.ToUpper().Contains(text.ToUpper()) || x.Uf.ToUpper().Contains(text.ToUpper())))
+                .Skip(TamanhoPagina * (pagina - 1))
+                .Take(TamanhoPagina);
+
+            //OrdenarPorNome(queryCidade, ordem);
+
+            //var queryRetorno = queryCidade
+            //    .Select(x => new
+            //    {
+            //        x.Nome,
+            //        x.Uf,
+            //        x.Ativo
+            //    });
+
+            //var cidades = queryRetorno.ToList();
+
+            var quantidadeCidades = DbContext.Cidades
+                .Where(x => x.Ativo && (x.Nome.ToUpper().Contains(text.ToUpper()) || x.Uf.ToUpper().Contains(text.ToUpper())))
+                .Count();
+
+            var quantidadePaginas = Math.Ceiling(Convert.ToDecimal(quantidadeCidades) / Convert.ToDecimal(TamanhoPagina));
+            if (quantidadePaginas < 1)
+            {
+                quantidadePaginas = 1;
+            }
+
+            return new { queryCidade, quantidadePaginas }; 
         }
     }
 }

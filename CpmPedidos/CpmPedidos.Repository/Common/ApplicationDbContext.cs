@@ -16,13 +16,14 @@ namespace CpmPedidos.Repository
             modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
         }
 
+        //Instanciar sem opções
         public ApplicationDbContext()
         {
             ChangeTracker.AutoDetectChangesEnabled = false;
         }
 
         // 4 ApplicationDbContext 
-        // Detecção automática de alterações do rastreador de alterações habilitado
+        // Instanciar com opções
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
             ChangeTracker.AutoDetectChangesEnabled = false;
