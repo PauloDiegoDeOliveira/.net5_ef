@@ -36,6 +36,11 @@ namespace CpmPedidos.API.Controllers
         [Route("{id}")]
         public bool Excluir(int id)
         {
+            //Teste
+            //var consulta = GetService<ICidadeRepository>().Excluir(id);
+
+            //return consulta == false ? NotFound(new { mensagem = titulo + " Inválido ou inexistente.", status = 2 }) : (IActionResult)new OkObjectResult(GetService<ICidadeRepository>().Excluir(id));
+
             return GetService<ICidadeRepository>().Excluir(id);
         }
     }
