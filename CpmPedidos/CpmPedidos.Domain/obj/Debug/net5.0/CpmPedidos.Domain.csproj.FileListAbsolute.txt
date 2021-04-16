@@ -1,0 +1,12 @@
+C:\Users\Diego_Pc\Downloads\ProjetoDDD\CpmPedidos\CpmPedidos.Domain\bin\Debug\net5.0\CpmPedidos.Domain.deps.json
+C:\Users\Diego_Pc\Downloads\ProjetoDDD\CpmPedidos\CpmPedidos.Domain\bin\Debug\net5.0\CpmPedidos.Domain.dll
+C:\Users\Diego_Pc\Downloads\ProjetoDDD\CpmPedidos\CpmPedidos.Domain\bin\Debug\net5.0\ref\CpmPedidos.Domain.dll
+C:\Users\Diego_Pc\Downloads\ProjetoDDD\CpmPedidos\CpmPedidos.Domain\bin\Debug\net5.0\CpmPedidos.Domain.pdb
+C:\Users\Diego_Pc\Downloads\ProjetoDDD\CpmPedidos\CpmPedidos.Domain\obj\Debug\net5.0\CpmPedidos.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diego_Pc\Downloads\ProjetoDDD\CpmPedidos\CpmPedidos.Domain\obj\Debug\net5.0\CpmPedidos.Domain.AssemblyInfoInputs.cache
+C:\Users\Diego_Pc\Downloads\ProjetoDDD\CpmPedidos\CpmPedidos.Domain\obj\Debug\net5.0\CpmPedidos.Domain.AssemblyInfo.cs
+C:\Users\Diego_Pc\Downloads\ProjetoDDD\CpmPedidos\CpmPedidos.Domain\obj\Debug\net5.0\CpmPedidos.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Diego_Pc\Downloads\ProjetoDDD\CpmPedidos\CpmPedidos.Domain\obj\Debug\net5.0\CpmPedidos.Domain.dll
+C:\Users\Diego_Pc\Downloads\ProjetoDDD\CpmPedidos\CpmPedidos.Domain\obj\Debug\net5.0\ref\CpmPedidos.Domain.dll
+C:\Users\Diego_Pc\Downloads\ProjetoDDD\CpmPedidos\CpmPedidos.Domain\obj\Debug\net5.0\CpmPedidos.Domain.pdb
+C:\Users\Diego_Pc\Downloads\ProjetoDDD\CpmPedidos\CpmPedidos.Domain\obj\Debug\net5.0\CpmPedidos.Domain.csprojAssemblyReference.cache
