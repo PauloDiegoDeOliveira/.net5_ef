@@ -9,5 +9,6 @@ namespace CpmPedido.Interface
         int Alterar(CidadeDTO model);
         bool Excluir(int id);
         dynamic Search(string text, int pagina, string ordem);
+        dynamic Get(string ordem);
     }
 }

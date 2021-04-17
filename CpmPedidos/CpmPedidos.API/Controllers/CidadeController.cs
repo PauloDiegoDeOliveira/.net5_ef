@@ -44,11 +44,20 @@ namespace CpmPedidos.API.Controllers
             return GetService<ICidadeRepository>().Excluir(id);
         }
 
+        // Paginação de dados quando procurar
         [HttpGet]
         [Route("search/{text}/{pagina?}")]
         public dynamic GetSearch(string text, int pagina = 1, [FromQuery] string ordem = "")
         {
             return GetService<ICidadeRepository>().Search(text, pagina, ordem);
+        }
+
+        // Ordem crescente ou decrescente
+        [HttpGet]
+        [Route("asc-desc")]
+        public dynamic Get([FromQuery] string ordem = "")
+        {
+            return GetService<ICidadeRepository>().Get(ordem);
         }
     }
 }
