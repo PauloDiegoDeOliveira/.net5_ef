@@ -1,5 +1,6 @@
 ﻿using CpmPedidos.Domain;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace CpmPedidos.Repository
 {
@@ -16,7 +17,13 @@ namespace CpmPedidos.Repository
             modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
         }
 
-        //Instanciar sem opções
+        // Simple logging de execução 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)      
+        {
+            optionsBuilder.LogTo(message => Debug.WriteLine(message));
+        }
+
+        // Instanciar sem opções, para não perder desepenho 
         public ApplicationDbContext()
         {
             ChangeTracker.AutoDetectChangesEnabled = false;

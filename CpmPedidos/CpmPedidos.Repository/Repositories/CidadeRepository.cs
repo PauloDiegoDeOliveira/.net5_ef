@@ -8,11 +8,6 @@ namespace CpmPedidos.Repository
 {
     public class CidadeRepository : BaseRepository, ICidadeRepository
     {
-        // 5 Repository
-        public CidadeRepository(ApplicationDbContext dbContext) : base(dbContext)
-        {
-        }
-
         private void OrdenarPorNome(ref IQueryable<Cidade> query, string ordem)
         {
             if (string.IsNullOrEmpty(ordem) || ordem.ToUpper() == "ASC")
@@ -22,7 +17,12 @@ namespace CpmPedidos.Repository
             else
             {
                 query = query.OrderByDescending(x => x.Nome);
-            }
+            }            
+        }
+
+        // 5 Repository
+        public CidadeRepository(ApplicationDbContext dbContext) : base(dbContext)
+        {
         }
 
         public dynamic Get()
@@ -195,5 +195,7 @@ namespace CpmPedidos.Repository
 
             return queryRetorno.ToList();
         }
+
+
     }
 }
